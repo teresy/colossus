@@ -45,7 +45,7 @@ object UpgradeRequest {
       if (secver == "13")
       if (uheader.toLowerCase == "websocket")
       if (cheader.toLowerCase.split(",").map { _.trim } contains "upgrade")
-      if (origins.isEmpty || headers.firstValue("origin").exists(origins.contains))
+      if origins.isEmpty || headers.firstValue("origin").exists(origins.contains)
     } yield
       HttpResponse(
         HttpResponseHead(
